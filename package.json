@@ -1,27 +1,28 @@
 {
-  "name": "beatbattle",
+  "name": "create-react-app-antd",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "@craco/craco": "^5.6.4",
+    "@dnd-kit/core": "^3.1.1",
+    "@testing-library/jest-dom": "^5.9.0",
+    "@testing-library/react": "^11.0.0",
+    "@testing-library/user-event": "^11.1.0",
+    "antd": "^4.5.2",
+    "craco-less": "^1.17.0",
+    "react": "^16.13.1",
+    "react-beautiful-dnd": "^13.1.0",
+    "react-dom": "^16.13.1",
+    "react-player": "^2.9.0",
+    "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
