@@ -44,7 +44,7 @@ const Submission = () => {
                 justify="center"
                 align = "middle"
             >
-                <Col span = {8} >
+                <Col span = {10}>
                     <Steps current={current}>
                         {steps.map(item => (
                             <Step key={item.title} title={item.title} />

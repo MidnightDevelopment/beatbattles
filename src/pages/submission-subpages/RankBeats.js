@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import ReactPlayer from "react-player"
-// fake data generator
+import Player from './player/Player'
+
 const getItems = count =>
     Array.from({ length: count }, (v, k) => k).map(k => ({
         id: `item-${k}`,
-        content: <ReactPlayer
-            url="https://soundcloud.com/glennmorrison/beethoven-moonlight-sonata"
-            light = "true"
+        content: <Player
+            client_id="c5a171200f3a0a73a523bba14a1e0a29"
+            audio_id="193179003"
+            title="Easyfun - Fanta"
         />
     }));
 
@@ -16,18 +17,16 @@ const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
     result.splice(endIndex, 0, removed);
-
     return result;
 };
 
 const grid = 8;
 
-const getItemStyle = (isDragging, draggableStyle, index, countNumber) => ({
-    // some basic styles to make the items look a bit nicer
-
+const getItemStyle = (isDragging, draggableStyle) => ({
+    // some basic styles to make the items look a bit nice
     userSelect: "none",
     padding: grid * 2,
-    margin: index === countNumber ? `0 0 0 0`: `0 0 ${grid}px 0`,
+    margin: `0 0 ${grid}px 0`,
 
     // change background colour if dragging
     background: isDragging ? "black" : "black",
@@ -52,7 +51,6 @@ class RankBeats extends Component {
     }
 
     onDragEnd(result) {
-        // dropped outside the list
         if (!result.destination) {
             return;
         }
@@ -67,8 +65,6 @@ class RankBeats extends Component {
         });
     }
 
-    // Normally you would want to split things out into separate components.
-    // But in this example everything is just done in one place for simplicity
     render() {
         return (
             <DragDropContext onDragEnd={this.onDragEnd}>
@@ -88,10 +84,16 @@ class RankBeats extends Component {
                                             {...provided.dragHandleProps}
                                             style={
                                                 getItemStyle(snapshot.isDragging,
-                                                    provided.draggableProps.style, index, this.state.itemCount
+                                                    provided.draggableProps.style
                                             )}
                                         >
-                                            {item.content}
+                                            <div style={{
+                                                margin: `0 auto`,
+                                                width: "85%"
+                                            }}>
+                                                {item.content}
+                                            </div>
+
                                         </div>
                                     )}
                                 </Draggable>

@@ -10,11 +10,16 @@
     "@testing-library/user-event": "^11.1.0",
     "antd": "^4.5.2",
     "craco-less": "^1.17.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^16.13.1",
     "react-player": "^2.9.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-soundcloud-player": "^1.1.1",
+    "react-soundcloud-widget": "^2.0.4",
+    "react-soundcloud-widget-player": "^1.0.2",
+    "react-soundplayer": "^1.0.5"
   },
   "scripts": {
     "start": "craco start",
