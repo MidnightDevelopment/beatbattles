@@ -3,6 +3,7 @@ import React from 'react';
 import './Submission.less';
 import BeatSubmissionForm from "./submission-subpages/BeatSubmissionFrom";
 import RankBeats from "./submission-subpages/RankBeats";
+import Wait from "./submission-subpages/Wait"
 const { Title, Link } = Typography;
 
 const { Step } = Steps;
@@ -24,7 +25,7 @@ const steps = [
     },
     {
         title: 'Wait',
-        content: 'Last-content',
+        content: <Wait/>,
     },
 ];
 

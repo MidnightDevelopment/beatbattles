@@ -102,22 +102,6 @@ export default class Player extends Component {
     }, 1000)
   }
 
-  forward() {
-    const { audioPlayer } = this.state
-    let newTime = audioPlayer.currentTime + 30
-    if (newTime < audioPlayer.duration) {
-      audioPlayer.currentTime = Math.floor(newTime)
-    }
-  }
-
-  replay() {
-    const { audioPlayer } = this.state
-    let newTime = audioPlayer.currentTime - 30
-    if (newTime > 0) {
-      audioPlayer.currentTime = Math.floor(newTime)
-    }
-  }
-
   renderPlayerIcons() {
     const { playing } = this.state
 
@@ -212,6 +196,7 @@ const PlayerDisplay = styled.div`
 const PlayerControlIcon = styled.div`
   cursor: pointer;
   display: inline-block;
+  margin-right: 1.2rem;
 `
 
 const PlayerProgress = styled.div`
@@ -245,9 +230,7 @@ const PlayerProgressBar = styled.span`
   padding: 0.1rem 0;
   margin: 0 0.5rem;
   cursor: pointer;
-  display: block;
   position: relative;
-  width: 100%;
   background: #eee;
   border-radius: 2px;
   overflow: hidden;

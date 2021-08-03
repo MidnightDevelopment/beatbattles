@@ -1,15 +1,12 @@
 import React, { Component } from "react";
+import IconSlider from "./Test"
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Player from './player/Player'
 
 const getItems = count =>
     Array.from({ length: count }, (v, k) => k).map(k => ({
         id: `item-${k}`,
-        content: <Player
-            client_id="c5a171200f3a0a73a523bba14a1e0a29"
-            audio_id="193179003"
-            title="Easyfun - Fanta"
-        />
+        content: <IconSlider/>
     }));
 
 // a little function to help us with reordering the result
@@ -36,7 +33,7 @@ const getItemStyle = (isDragging, draggableStyle) => ({
 });
 
 const getListStyle = isDraggingOver => ({
-    background: isDraggingOver ? "lightgrey" : "lightgrey",
+    background: isDraggingOver ? "grey" : "grey",
     padding: grid,
     width: "auto"
 });
@@ -89,7 +86,7 @@ class RankBeats extends Component {
                                         >
                                             <div style={{
                                                 margin: `0 auto`,
-                                                width: "85%"
+                                                width: "90%"
                                             }}>
                                                 {item.content}
                                             </div>
