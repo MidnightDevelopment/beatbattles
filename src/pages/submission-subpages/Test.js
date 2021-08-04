@@ -2,6 +2,9 @@ import { Slider, Button, Row, Progress, Col } from 'antd';
 import React, { Component } from 'react'
 import './Test.less'
 import { RightOutlined, PauseOutlined } from '@ant-design/icons';
+import { Typography, Space } from 'antd';
+
+const { Text, Link } = Typography;
 
 class IconSlider extends React.Component {
 
@@ -16,9 +19,9 @@ class IconSlider extends React.Component {
 
     onPlayClick() {
         let play = !this.state.playing;
-        let icon = <PauseOutlined/>;
+        let icon = <RightOutlined/>;
         if (play) {
-            icon = <RightOutlined/>;
+            icon = <PauseOutlined/>;
         }
         this.setState({
             playing: play,
@@ -29,18 +32,23 @@ class IconSlider extends React.Component {
     render() {
         return (
             <>
+                <Row>
+                    <Text> Hello </Text>
+                </Row>
                 <Row style={{
-                    height: "50px"
+                    height: "50px",
+                    zIndex: "100"
                 }} justify={"center"} align={"middle"}>
                     <Col span = {4}>
                         <Button shape="circle" icon={this.state.icon} onClick={this.onPlayClick}>
                         </Button>
                     </Col>
                     <Col span = {20}>
-                        <Progress percent={30} strokeColor={"#FFFFFF"} />
+                        <Slider tooltipVisible={false} autoFocus={true}/>
                     </Col>
 
                 </Row>
+
             </>
         );
     }

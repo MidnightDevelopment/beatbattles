@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import IconSlider from "./Test"
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Player from './player/Player'
-
+import { Slider, Button, Row, Progress, Col, Typography } from 'antd';
+const { Text, Link, Title } = Typography;
 const getItems = count =>
     Array.from({ length: count }, (v, k) => k).map(k => ({
         id: `item-${k}`,
-        content: <IconSlider/>
+        content: <IconSlider/>,
     }));
 
 // a little function to help us with reordering the result
@@ -22,20 +23,23 @@ const grid = 8;
 const getItemStyle = (isDragging, draggableStyle) => ({
     // some basic styles to make the items look a bit nice
     userSelect: "none",
-    padding: grid * 2,
     margin: `0 0 ${grid}px 0`,
+    borderRadius: "2px",
+    zIndex: "50",
+    border: "1px solid rgba(255,255,255,0.85)",
 
     // change background colour if dragging
     background: isDragging ? "black" : "black",
 
     // styles we need to apply on draggables
-    ...draggableStyle
+    ...draggableStyle,
 });
 
 const getListStyle = isDraggingOver => ({
-    background: isDraggingOver ? "grey" : "grey",
+    //background: isDraggingOver ? "rgba(255,255,255,0.75)" : "rgba(255,255,255,0)",
     padding: grid,
-    width: "auto"
+    width: "auto",
+    borderRadius: "2px"
 });
 
 class RankBeats extends Component {
@@ -64,42 +68,51 @@ class RankBeats extends Component {
 
     render() {
         return (
-            <DragDropContext onDragEnd={this.onDragEnd}>
-                <Droppable droppableId="droppable">
-                    {(provided, snapshot) => (
-                        <div
-                            {...provided.droppableProps}
-                            ref={provided.innerRef}
-                            style={getListStyle(snapshot.isDraggingOver)}
-                        >
-                            {this.state.items.map((item, index) => (
-                                <Draggable key={item.id} draggableId={item.id} index={index}>
-                                    {(provided, snapshot) => (
-                                        <div
-                                            ref={provided.innerRef}
-                                            {...provided.draggableProps}
-                                            {...provided.dragHandleProps}
-                                            style={
-                                                getItemStyle(snapshot.isDragging,
-                                                    provided.draggableProps.style
-                                            )}
-                                        >
-                                            <div style={{
-                                                margin: `0 auto`,
-                                                width: "90%"
-                                            }}>
-                                                {item.content}
-                                            </div>
+            <>
+                <Title level={5}> Rank by placing the best beat cards at the top and the worst at the bottom </Title>
+                <DragDropContext onDragEnd={this.onDragEnd}>
+                    <Droppable droppableId="droppable">
+                        {(provided, snapshot) => (
+                            <div
+                                {...provided.droppableProps}
+                                ref={provided.innerRef}
+                                style={getListStyle(snapshot.isDraggingOver)}
+                            >
+                                {this.state.items.map((item, index) => (
+                                    <Draggable key={item.id} draggableId={item.id} index={index}>
+                                        {(provided, snapshot) => (
+                                            <div
+                                                ref={provided.innerRef}
+                                                {...provided.draggableProps}
 
-                                        </div>
-                                    )}
-                                </Draggable>
-                            ))}
-                            {provided.placeholder}
-                        </div>
-                    )}
-                </Droppable>
-            </DragDropContext>
+                                                style={
+                                                    getItemStyle(snapshot.isDragging,
+                                                        provided.draggableProps.style
+                                                    )}
+                                            >
+                                                <div{...provided.dragHandleProps} style={{
+                                                    height: "20px", background: "rgba(255, 255, 255, 0.5)"
+                                                }}>
+
+                                                </div>
+                                                <div style={{
+                                                    margin: `0 auto`,
+                                                    width: "90%",
+                                                }}>
+                                                    {item.content}
+                                                </div>
+
+                                            </div>
+                                        )}
+                                    </Draggable>
+                                ))}
+                                {provided.placeholder}
+                            </div>
+                        )}
+                    </Droppable>
+                </DragDropContext>
+            </>
+
         );
     }
 }

@@ -43,8 +43,7 @@ const Submission = () => {
                 type="flex"
                 style={{ alignItems: "center" }}
                 justify="center"
-                align = "middle"
-            >
+                align = "middle">
                 <Col span = {10}>
                     <Steps current={current}>
                         {steps.map(item => (
