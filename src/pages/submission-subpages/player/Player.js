@@ -138,10 +138,10 @@ export default class Player extends Component {
             <>
                 <audio id="audio" preload="none" ref="audio" src={streamUrl} />
                 <Row align={"middle"} style={{margin: "0.75rem"}}>
-                    <Col span={3}>
+                    <Col span={2}>
                         <Button shape="circle" icon={this.state.icon} size = {"large"} type={"text"} onClick={this.togglePlay}/>
                     </Col>
-                    <Col span={21} style={{textAlign: "left"}}>
+                    <Col span={22} style={{textAlign: "left"}}>
                         <Title level={5} style={{marginBottom: "0", marginTop: "0.5rem"}}>{title}</Title>
                         <Slider tooltipVisible={false}
                                 step = {0.01}

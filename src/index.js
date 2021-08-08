@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import MainPage from './pages/MainPage';
+import App from './App';
 import Submission from './pages/Submission';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <Submission />,
+  <App />,
   document.getElementById('root')
 );
 

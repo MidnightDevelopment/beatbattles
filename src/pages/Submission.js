@@ -8,12 +8,6 @@ const { Title, Link } = Typography;
 
 const { Step } = Steps;
 
-const start = (
-    <>
-        <Title hello/>
-    </>
-);
-
 const steps = [
     {
         title: 'Submit',
