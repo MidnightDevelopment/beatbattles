@@ -1,16 +1,14 @@
 import React, { Component } from "react";
-import IconSlider from "./Test"
+import Player from "./player/Player"
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import Player from './player/Player'
-import { Slider, Button, Row, Progress, Col, Typography } from 'antd';
-const { Text, Link, Title } = Typography;
+import { Typography } from 'antd';
+const { Title } = Typography;
 const getItems = count =>
     Array.from({ length: count }, (v, k) => k).map(k => ({
         id: `item-${k}`,
-        content: <IconSlider/>,
+        content: <Player client_id="c5a171200f3a0a73a523bba14a1e0a29" audio_id="193179003" title="Easyfun - Fanta"/>,
     }));
 
-// a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
@@ -93,15 +91,13 @@ class RankBeats extends Component {
                                                 <div{...provided.dragHandleProps} style={{
                                                     height: "20px", background: "rgba(255, 255, 255, 0.5)"
                                                 }}>
-
                                                 </div>
                                                 <div style={{
-                                                    margin: `0 auto`,
-                                                    width: "90%",
+                                                    margin: `0 0`,
+                                                    width: "99%",
                                                 }}>
                                                     {item.content}
                                                 </div>
-
                                             </div>
                                         )}
                                     </Draggable>
@@ -112,7 +108,6 @@ class RankBeats extends Component {
                     </Droppable>
                 </DragDropContext>
             </>
-
         );
     }
 }
