@@ -1,5 +1,7 @@
 export default {
-  // routes
-  mainPage: "/join",
-  submit: "/submit",
+    // routes
+    landingPage: "/",
+    submitBeat: "/submit",
+    create: "/create",
+    battleCreated: "/battleCreated"
 };
