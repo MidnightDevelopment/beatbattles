@@ -3,5 +3,6 @@ export default {
     landingPage: "/",
     submitBeat: "/submit",
     create: "/create",
-    battleCreated: "/battleCreated"
+    battleCreated: "/battleCreated",
+    results: "/results"
 };

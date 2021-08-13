@@ -89,8 +89,9 @@ class RankBeats extends Component {
                                                     )}
                                             >
                                                 <div{...provided.dragHandleProps} style={{
-                                                    height: "20px", background: "rgba(255, 255, 255, 0.5)"
+                                                    height: "20px", background: "rgba(255, 255, 255, 0.15)"
                                                 }}>
+
                                                 </div>
                                                 <div style={{
                                                     margin: `0 0`,
