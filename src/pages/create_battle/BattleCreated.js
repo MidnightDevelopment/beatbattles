@@ -22,10 +22,10 @@ class BattleCreated extends React.Component {
                         color: "white"
                     }}
                     status="success"
-                    title="Successfully Purchased Cloud Server ECS!"
-                    subTitle="Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait."
+                    title="Successfully Created Battle"
+                    subTitle="Use link midnight.beatbattles.herokuapp.com/15uds8-asdf9348hf to use host controls"
                     extra={[
-                        <Button key="buy">Buy Again</Button>,
+                        <Button key="buy">Go to battle as host</Button>,
                     ]}
                 />
             </Row>
