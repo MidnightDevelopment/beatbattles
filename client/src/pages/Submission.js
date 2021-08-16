@@ -39,9 +39,9 @@ const Submission = () => {
                 justify="center"
                 align = "middle">
                 <Col span = {10}>
-                    <Steps current={current}>
+                    <Steps current={current} style={{backgroundColor: "black"}}>
                         {steps.map(item => (
-                            <Step key={item.title} title={item.title} />
+                            <Step key={item.title} title={item.title} style={{backgroundColor: "black"}}/>
                         ))}
                     </Steps>
                     <div className="steps-content">{steps[current].content}</div>

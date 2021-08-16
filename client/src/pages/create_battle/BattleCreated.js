@@ -14,6 +14,7 @@ class BattleCreated extends React.Component {
             startMinute: 0
         }
     }
+
     render () {
         return (
             <Row className={"center"} align={"middle"} justify={"center"}>
