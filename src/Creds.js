@@ -1,1 +1,0 @@
-const hostname = "hello"
