@@ -14,4 +14,4 @@ build
 .env
 npm-debug.log
 
-src/Creds.js
+src/creds.js
